@@ -1,0 +1,10 @@
+FROM node:alpine
+
+
+WORKDIR /var/www/html
+
+COPY ./package.json /var/www/html/
+RUN npm install
+COPY . /var/www/html/
+
+CMD ["npm", "start"]
