@@ -1,4 +1,5 @@
 sudo : required
+language: generic 
 services:
  - docker
 
@@ -7,4 +8,4 @@ before_install:
 
 
 scripts:
- - docker run dibzjr/docker-react npm run test -- --coverage   
+ - docker run -e CI=true dibzjr/docker-react npm run test -- --coverage   
