@@ -11,6 +11,7 @@ scripts:
  - docker run -e CI=true dibzjr/docker-react npm run test -- --coverage 
 
 deploy:
+  skip_cleanup: true
   provider: elasticbeanstalk
   region: 'eu-central-1'
   app: 'docker'
@@ -19,5 +20,5 @@ deploy:
   bucket_path: 'docker'
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY  
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"  
